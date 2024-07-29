@@ -1,21 +1,33 @@
 import React, { useState } from 'react';
 import { MdOutlineAttachEmail } from "react-icons/md";
 import { FaWhatsapp } from "react-icons/fa";
-import Modal from './Model';
+import Modal from './Model'; 
 
-const cv_url = 'http://localhost:3000/Salma_Resume_common.pdf';
+
+const cv_url ='https:/Salma-Jiffry.github.io/new-sal-portfolio/Salma_Resume_common.pdf';
 
 const AboutPage = () => {
     const [showModal, setShowModal] = useState(false);
 
-    const downloadfile = (url) => {
-        const fileName = url.split("/").pop();
-        const aTag = document.createElement("a");
-        aTag.href = url;
-        aTag.setAttribute("download", fileName);
-        document.body.appendChild(aTag);
-        aTag.click();
-        aTag.remove();
+    const downloadFile = (url) => {
+        // Check if the file is accessible
+        fetch(url)
+            .then(response => {
+                if (response.ok) {
+                    const fileName = url.split("/").pop();
+                    const aTag = document.createElement("a");
+                    aTag.href = url;
+                    aTag.setAttribute("download", fileName);
+                    document.body.appendChild(aTag);
+                    aTag.click();
+                    aTag.remove();
+                } else {
+                    console.error('File not found or inaccessible');
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching the file:', error);
+            });
     }
 
     const handleDownloadClick = () => {
@@ -24,7 +36,7 @@ const AboutPage = () => {
 
     const handleConfirm = () => {
         setShowModal(false);
-        downloadfile(cv_url);
+        downloadFile(cv_url);
     }
 
     const handleClose = () => {
@@ -48,8 +60,7 @@ const AboutPage = () => {
             <div className='contact-info'>
                 <ul className="contact-info-list">
                     <li className="contact-item">
-                    <a href="#6">
-                        
+                        <a href="#6">
                             <MdOutlineAttachEmail />salma.jiffry.13@gmail.com
                         </a>
                     </li>
@@ -68,7 +79,7 @@ const AboutPage = () => {
                 message="Do you want to download my resume?"
             />
         </div>
-    )
+    );
 }
 
 export default AboutPage;
