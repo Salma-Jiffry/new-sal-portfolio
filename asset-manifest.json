@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/new-sal-portfolio/static/css/main.e511c367.css",
-    "main.js": "/new-sal-portfolio/static/js/main.e1d6f717.js",
+    "main.js": "/new-sal-portfolio/static/js/main.7620cc2a.js",
     "static/js/453.bab6dae5.chunk.js": "/new-sal-portfolio/static/js/453.bab6dae5.chunk.js",
     "static/media/final-bg.jpg": "/new-sal-portfolio/static/media/final-bg.547b57330193a541c67c.jpg",
     "static/media/bike-race.jpg": "/new-sal-portfolio/static/media/bike-race.6d9325032a7c43802d55.jpg",
@@ -24,11 +24,11 @@
     "static/media/slick.woff": "/new-sal-portfolio/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/new-sal-portfolio/index.html",
     "main.e511c367.css.map": "/new-sal-portfolio/static/css/main.e511c367.css.map",
-    "main.e1d6f717.js.map": "/new-sal-portfolio/static/js/main.e1d6f717.js.map",
+    "main.7620cc2a.js.map": "/new-sal-portfolio/static/js/main.7620cc2a.js.map",
     "453.bab6dae5.chunk.js.map": "/new-sal-portfolio/static/js/453.bab6dae5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e511c367.css",
-    "static/js/main.e1d6f717.js"
+    "static/js/main.7620cc2a.js"
   ]
 }
