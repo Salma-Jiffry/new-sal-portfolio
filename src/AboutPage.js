@@ -3,32 +3,10 @@ import { MdOutlineAttachEmail } from "react-icons/md";
 import { FaWhatsapp } from "react-icons/fa";
 import Modal from './Model'; 
 
-
-const cv_url ='https:/Salma-Jiffry.github.io/new-sal-portfolio/Salma_Resume_common.pdf';
+const cv_url ='https://Salma-Jiffry.github.io/new-sal-portfolio/Salma_Resume_common.pdf';
 
 const AboutPage = () => {
     const [showModal, setShowModal] = useState(false);
-
-    const downloadFile = (url) => {
-        // Check if the file is accessible
-        fetch(url)
-            .then(response => {
-                if (response.ok) {
-                    const fileName = url.split("/").pop();
-                    const aTag = document.createElement("a");
-                    aTag.href = url;
-                    aTag.setAttribute("download", fileName);
-                    document.body.appendChild(aTag);
-                    aTag.click();
-                    aTag.remove();
-                } else {
-                    console.error('File not found or inaccessible');
-                }
-            })
-            .catch(error => {
-                console.error('Error fetching the file:', error);
-            });
-    }
 
     const handleDownloadClick = () => {
         setShowModal(true);
@@ -36,7 +14,12 @@ const AboutPage = () => {
 
     const handleConfirm = () => {
         setShowModal(false);
-        downloadFile(cv_url);
+        const aTag = document.createElement("a");
+        aTag.href = cv_url;
+        aTag.setAttribute("download", "Salma_Resume_common.pdf");
+        document.body.appendChild(aTag);
+        aTag.click();
+        aTag.remove();
     }
 
     const handleClose = () => {
@@ -61,7 +44,7 @@ const AboutPage = () => {
                 <ul className="contact-info-list">
                     <li className="contact-item">
                         <a href="#6">
-                            <MdOutlineAttachEmail />salma.jiffry.13@gmail.com
+                            <MdOutlineAttachEmail /> salma.jiffry.13@gmail.com
                         </a>
                     </li>
                     <li className="contact-item">
